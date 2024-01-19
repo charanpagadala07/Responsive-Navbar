@@ -1,0 +1,114 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    background: url(wallpaper3.jpg);
+    background-size: cover;
+    min-height: 100vh;
+    background-position: center;
+    backdrop-filter: blur(2px);
+
+}
+#check{
+    display: none;
+}
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.3rem 10%;
+    background-color: rgba(0, 0, 0,0.1);
+    backdrop-filter: blur(20px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+.header::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-color: rgba(0, 0, 0,0.1);
+    backdrop-filter: blur(20px);
+
+    
+}
+.logo{
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 30px;
+}
+.navbar a {
+    font-size: 15px;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 28px;
+}
+
+.icons{
+    position: absolute;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+    display: none;
+    right: 30px;
+    top: 20px;
+
+}
+
+@media (max-width:900px){
+    .header{
+        padding: 1.3rem 7%;
+    }
+    .logo{
+        font-size: 21px;
+    }
+    .navbar a{
+        font-size: 11px;
+        margin-left: 16px;
+    }
+}
+
+@media (min-width:320px) and (max-width:470px){
+    .icons{
+        display: inline-flex;
+    }
+    .logo{
+        font-size: 25px;
+    }
+    .navbar{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: 0;
+        background-color: rgba(0, 0, 0,0.1);
+        backdrop-filter: blur(70px);
+        box-shadow: 0 10px 10px rgba(0, 0, 0,0.1);
+        overflow: hidden;
+        transition: 0.3s ease;
+    }
+    #check:checked~.navbar{
+        height:17.7rem;
+    }
+    
+    .navbar a{
+        font-size: 15px;
+        display: block;
+        margin: 1.5rem;
+        text-align: center;
+    }
+    
+    
+}
+
